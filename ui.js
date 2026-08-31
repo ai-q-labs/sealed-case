@@ -458,3 +458,12 @@ if (conn.supported) {
 // Keep a hook for the demo, but only for reading. There is deliberately no
 // path from here to the solution: `engine` never exposes it.
 window.sealedCase = { engine, phases: PHASES };
+
+// `?demo=1` runs the narrated walkthrough used for the demo video. It drives
+// the real tools and stops at the confirmation card, because that click is the
+// one thing in this project that has to be a person's.
+if (new URLSearchParams(location.search).has("demo")) {
+  const demo = await import("./demo.js");
+  demo.watchForVerdict(engine);
+  demo.runDemo(engine);
+}

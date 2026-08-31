@@ -553,3 +553,41 @@ a:hover { color: var(--amber); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---------- narrated walkthrough (?demo=1) ---------- */
+
+#demo-caption {
+  position: fixed;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%) translateY(0.6rem);
+  z-index: 50;
+  max-width: min(56rem, calc(100vw - 2rem));
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(12, 9, 8, 0.94);
+  backdrop-filter: blur(3px);
+  color: var(--paper);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+#demo-caption.on,
+#demo-caption.warn,
+#demo-caption.prompt {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+#demo-caption.warn { border-color: var(--amber-dim); color: var(--amber); }
+#demo-caption.prompt {
+  border-color: var(--amber);
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

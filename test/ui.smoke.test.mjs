@@ -115,6 +115,8 @@ globalThis.document = {
   // no `modelContext`: this run exercises the no-WebMCP path
 };
 globalThis.window = {};
+// no `?demo=1`, so this run exercises the ordinary interactive path
+globalThis.location = { search: "" };
 
 const { default: _ } = await import("../ui.js").then((m) => ({ default: m }));
 
