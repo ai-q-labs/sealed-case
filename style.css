@@ -213,8 +213,21 @@ main {
   color: var(--paper-faint);
   margin-top: 0.1rem;
 }
-.obj.done { color: var(--paper-faint); border-style: dashed; }
-.obj.done::after { content: " ✓"; color: var(--green); }
+.obj.done {
+  color: var(--paper-faint);
+  border-style: dashed;
+  position: relative;
+  padding-right: 1.7rem;
+}
+/* the tick sits in the corner rather than after the label, so it does not
+   land on its own line below the `where` caption */
+.obj.done::after {
+  content: "✓";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.65rem;
+  color: var(--green);
+}
 .obj:disabled { cursor: default; opacity: 0.75; }
 
 .suspects li {
