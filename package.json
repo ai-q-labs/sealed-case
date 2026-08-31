@@ -1,0 +1,12 @@
+{
+  "name": "sealed-case",
+  "version": "1.0.0",
+  "description": "A one-player murder mystery where an AI agent runs the table through WebMCP and never learns who did it.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python -m http.server 8080"
+  }
+}

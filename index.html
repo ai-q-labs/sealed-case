@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sealed Case — The Lantern Room</title>
+    <meta
+      name="description"
+      content="A one-player murder mystery where an AI agent runs the table through WebMCP and never learns who did it."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1614'/%3E%3Cpath d='M9 12h14v10H9z' fill='none' stroke='%23e0a44c' stroke-width='1.6'/%3E%3Cpath d='M9 12l7 6 7-6' fill='none' stroke='%23e0a44c' stroke-width='1.6'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="lamp" aria-hidden="true"></div>
+
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <h1>Sealed Case</h1>
+          <p class="brand-sub">The Lantern Room &middot; Jimbocho, Tokyo &middot; 02:40</p>
+        </div>
+      </div>
+      <div class="status" id="mcp-status" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="status-text">checking for WebMCP&hellip;</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- centre: the story and everything the player does -->
+      <section class="stage" aria-label="The case">
+        <div id="stage-body"></div>
+      </section>
+
+      <!-- left rail: the room -->
+      <aside class="rail rail-room" aria-label="The room">
+        <h2>The room</h2>
+        <p class="rail-hint" id="room-hint">Not yet open.</p>
+        <ul class="objects" id="objects"></ul>
+
+        <h2 class="spaced">The three of them</h2>
+        <ul class="suspects" id="suspects"></ul>
+      </aside>
+
+      <!-- right rail: what the agent can and cannot see -->
+      <aside class="rail rail-agent" aria-label="The agent">
+        <h2>The agent</h2>
+
+        <div class="envelope" id="envelope">
+          <div class="envelope-art" aria-hidden="true">
+            <svg viewBox="0 0 64 44" width="64" height="44">
+              <rect x="1" y="1" width="62" height="42" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M1 4l31 24L63 4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="32" cy="30" r="6.5" fill="currentColor" opacity=".18"/>
+              <circle cx="32" cy="30" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <p class="envelope-text">
+            The solution is held in this page and is not reachable from any tool.
+            The agent will learn it when you do.
+          </p>
+        </div>
+
+        <h3>Tools it can call now</h3>
+        <ul class="toolset" id="toolset"></ul>
+
+        <h3 class="spaced">What it has done</h3>
+        <ol class="calls" id="calls">
+          <li class="calls-empty">Nothing yet.</li>
+        </ol>
+      </aside>
+    </main>
+
+    <footer class="colophon">
+      <p>
+        Built for <a href="https://webmcp.devpost.com/" rel="noopener">The WebMCP Challenge</a> by
+        <a href="https://github.com/ai-q-labs" rel="noopener">AiQ Labs</a>, who publish
+        murder mysteries for tables of three to seven people &mdash; and built this one for a table of one.
+        <a href="https://github.com/ai-q-labs/sealed-case" rel="noopener">Source</a> &middot; MIT.
+      </p>
+      <p>
+        This scenario is entirely fictional. Every person, publisher, magazine and
+        establishment in it is invented, and none is based on a real one.
+      </p>
+    </footer>
+
+    <script type="module" src="ui.js"></script>
+  </body>
+</html>
