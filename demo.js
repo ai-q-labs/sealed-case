@@ -146,7 +146,55 @@ function makeCaller(engine) {
   };
 }
 
+/**
+ * Chrome will not speak without a user gesture: `speak()` resolves silently and
+ * the walkthrough runs mute. So the demo opens behind a button, which also
+ * gives whoever is recording a clean frame to start on.
+ */
+function waitForStart() {
+  return new Promise((resolve) => {
+    const el = (tag, cls, text) => {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    };
+
+    const veil = document.createElement("div");
+    veil.id = "demo-veil";
+    const card = el("div", "demo-veil-card");
+    card.append(el("p", "demo-veil-kicker", "Narrated walkthrough"));
+    card.append(el("h2", null, "Sealed Case"));
+    card.append(
+      el(
+        "p",
+        "demo-veil-body",
+        "Two and a half minutes. The steps below are real WebMCP tool calls against this page, " +
+          "and it stops where the agent has to — at a button only you can press.",
+      ),
+    );
+    const start = el("button", "act primary", "Begin the walkthrough");
+    start.id = "demo-start";
+    card.append(start);
+    card.append(el("p", "demo-veil-note", "Sound on."));
+    veil.append(card);
+    document.body.append(veil);
+
+    start.addEventListener("click", () => {
+      // warm the speech engine inside the gesture, or the first line is eaten
+      try {
+        speechSynthesis.cancel();
+        speechSynthesis.speak(new SpeechSynthesisUtterance(" "));
+      } catch {}
+      veil.classList.add("gone");
+      setTimeout(() => veil.remove(), 400);
+      resolve();
+    });
+  });
+}
+
 export async function runDemo(engine) {
+  await waitForStart();
   const caption = makeCaption();
   const caller = makeCaller(engine);
 
