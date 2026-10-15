@@ -15,7 +15,7 @@ export const CASE = {
 
   briefing: `A private bar on the second floor of a second-hand bookshop in Jimbocho.
 Four people were in the building tonight. At 02:40 the owner found Rentaro Kadokura —
-sixty-one, chief editor at Gyosei Publishing — dead at the counter, a half-finished
+sixty-one, chief editor at Akeboshi Publishing — dead at the counter, a half-finished
 glass in front of him.
 
 The door to the Lantern Room was bolted from the inside. The bolt is a solid iron bar
@@ -28,7 +28,7 @@ have agreed to answer your questions.`,
   victim: {
     name: "Rentaro Kadokura",
     age: 61,
-    role: "Chief editor, Gyosei Publishing",
+    role: "Chief editor, Akeboshi Publishing",
     note: "A regular here for thirty years. Kept a bottle behind the counter with his name on it.",
   },
 
@@ -51,7 +51,7 @@ have agreed to answer your questions.`,
       id: "onodera",
       name: "Miyuki Onodera",
       age: 34,
-      role: "Editor, Gyosei Publishing — Kadokura's subordinate",
+      role: "Editor, Akeboshi Publishing — Kadokura's subordinate",
       visible: "Arrived 23:40, left 00:20. Came to have a proof signed off.",
     },
   ],
@@ -132,7 +132,7 @@ On the back, in pencil: natsu, 1996.`,
       where: "in the stairwell, at eye level",
       reveals: `A newspaper page, thirty years yellow, framed the way a shop frames its first banknote.
 
-  GYOSEI WEEKLY — 14 August 1996
+  AKEBOSHI WEEKLY — 14 August 1996
   "THE LIBRARIAN WHO INVENTED A WAR"
   ... the documents Ms. K. presented to this magazine, and to the city, do not exist ...
 
