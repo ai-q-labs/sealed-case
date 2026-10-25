@@ -135,7 +135,8 @@ destroy the thing we sell.
 **The scenario is entirely fictional.** Every person, publisher, magazine and establishment in
 it is invented, and none is based on a real one. Type is [EB Garamond](https://fonts.google.com/specimen/EB+Garamond)
 and [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono), both under the SIL Open
-Font License. There are no images; the favicon is an inline SVG written for this project.
+Font License and served from `fonts/` in this repository, so the page loads nothing from a
+font CDN. There are no images; the favicon is an inline SVG written for this project.
 
 ## About us
 
