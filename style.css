@@ -2,7 +2,7 @@
 
 /* Self-hosted (SIL OFL, fonts/OFL-*.txt), so visiting the page sends nothing to a font CDN. */
 @font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-latin.woff2") format("woff2"); font-weight: 400 600; font-display: swap; }
-@font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-italic-latin.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-italic-latin.woff2") format("woff2"); font-weight: 400 600; font-style: italic; font-display: swap; }
 @font-face { font-family: "IBM Plex Mono"; src: url("fonts/ibm-plex-mono-400-latin.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "IBM Plex Mono"; src: url("fonts/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 
